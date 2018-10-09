@@ -26,6 +26,8 @@ namespace GradeBook.GradeBooks
 
 		    if (averageGrade.CompareTo(studentsInOrder[numberInGrade].AverageGrade) > 0)
 			    return 'A';
+		    if (averageGrade.CompareTo(studentsInOrder[numberInGrade * 2].AverageGrade) > 0)
+			    return 'B';
 		    return 'F';
 	    }
 	}
