@@ -19,6 +19,13 @@ namespace GradeBook.GradeBooks
 			    throw new InvalidOperationException();
 		    }
 
+		    var numberInGrade = Students.Count / 5;
+		    var studentsInOrder = new List<Student>();
+			Students.ForEach(student => studentsInOrder.Add(student));
+		    studentsInOrder.Sort((left, right) => right.AverageGrade.CompareTo(left.AverageGrade));
+
+		    if (averageGrade.CompareTo(studentsInOrder[numberInGrade].AverageGrade) > 0)
+			    return 'A';
 		    return 'F';
 	    }
 	}
